@@ -1,7 +1,13 @@
 <h1>Index cocktail</h1>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= cocktail.name %></li>
-  <% end %>
-</ul>
+<table>
+  <tbody>
+    <% @cocktails.each do |cocktail| %>
+      <tr>
+        <td><%= link_to cocktail.name, cocktail_path(cocktail) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Form", new_cocktail_path  %>
